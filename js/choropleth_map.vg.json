@@ -52,14 +52,24 @@
       ],
       "mark": {"type": "geoshape", "stroke": "white"},
       "encoding": {
-        "color": {
-          "field": "Total death rate per 100k population",
-          "type": "quantitative",
-          "scale": {
-            "domain": [100, 500, 800, 2000],
-            "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603", "#612306"]
-          }
-        },
+          "color": {
+
+            "field": "Total death rate per 100k population",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [100, 500, 800, 2000],
+              "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603", "#612306"]
+              },
+              "legend": {
+                "title": "Total death rate",
+                "orient": "right",
+                "offset": 10,
+                "labelOffset": 3,
+                "titleFontSize":14,
+                "titlePadding": 5
+              }
+            },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
           {
